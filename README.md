@@ -1,0 +1,1 @@
+I was interested to see why the rust code was slower and why adding the .lock fixed it. Code originally posted in this reddit thread: https://www.reddit.com/r/rust/comments/1debh8c/learning_rust_this_code_in_c_runs_in_a_semi/?share_id=f710o4YlwLSGDq2Hb1KL3&utm_content=1&utm_medium=android_app&utm_name=androidcss&utm_source=share&utm_term=1
