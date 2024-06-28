@@ -1,5 +1,5 @@
 use std::io::{self, Write};
-use std::ops::{Add, Div, Sub, Mul};
+use std::ops::{Add, Div, Mul, Sub};
 
 struct Ray {
     _origin: Vec3,
@@ -8,7 +8,7 @@ struct Ray {
 
 impl Ray {
     fn with_values(_origin: Vec3, dir: Vec3) -> Ray {
-        Ray {_origin, dir}
+        Ray { _origin, dir }
     }
 
     fn direction(&self) -> &Vec3 {
@@ -22,7 +22,7 @@ impl Mul<Vec3> for f64 {
         Vec3 {
             x: self * other.x,
             y: self * other.y,
-            z: self * other.z
+            z: self * other.z,
         }
     }
 }
@@ -36,7 +36,7 @@ struct Vec3 {
 
 impl Vec3 {
     fn with_values(x: f64, y: f64, z: f64) -> Vec3 {
-        Vec3 {x, y, z}
+        Vec3 { x, y, z }
     }
 
     fn x(self) -> f64 {
@@ -69,7 +69,7 @@ impl Div<f64> for Vec3 {
         Vec3 {
             x: self.x / other,
             y: self.y / other,
-            z: self.z / other
+            z: self.z / other,
         }
     }
 }
@@ -80,7 +80,7 @@ impl Add<f64> for Vec3 {
         Vec3 {
             x: self.x + other,
             y: self.y + other,
-            z: self.z + other
+            z: self.z + other,
         }
     }
 }
@@ -91,7 +91,7 @@ impl Add<Vec3> for Vec3 {
         Vec3 {
             x: self.x + other.x,
             y: self.y + other.y,
-            z: self.z + other.z
+            z: self.z + other.z,
         }
     }
 }
@@ -102,7 +102,7 @@ impl Sub<f64> for Vec3 {
         Vec3 {
             x: self.x - other,
             y: self.y - other,
-            z: self.z - other
+            z: self.z - other,
         }
     }
 }
@@ -113,7 +113,7 @@ impl Sub<Vec3> for Vec3 {
         Vec3 {
             x: self.x - other.x,
             y: self.y - other.y,
-            z: self.z - other.z
+            z: self.z - other.z,
         }
     }
 }
@@ -124,7 +124,7 @@ impl Mul<f64> for Vec3 {
         Vec3 {
             x: self.x * other,
             y: self.y * other,
-            z: self.z * other
+            z: self.z * other,
         }
     }
 }
@@ -147,8 +147,7 @@ fn ray_color(ray: &Ray) -> Color {
     (1.0 - a) * Color::with_values(1.0, 1.0, 1.0) + a * Color::with_values(0.5, 0.7, 1.0)
 }
 
-
-fn main() {
+pub fn raytrace() {
     let aspect_ratio = 16.0 / 9.0;
     let image_width = 400;
     let image_height = (image_width as f64 / aspect_ratio) as i32;
